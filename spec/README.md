@@ -11,6 +11,12 @@ Create a User Interface to allow booking appointments online.
 - Allow customer to choose specific staff member (optional)
 - Make a component that implements the functionality that could be used anywhere (dedicated page, in a popup, embedded in iframe, etc)
 
+### Goals
+
+- Develop User Experience for Booking a Service
+- Display availablility for date & times based on duration of services selected.
+- Record Booking Data as JSON object consistent with [booking.json](./booking.json)
+
 ### Technology Requirements
 - Written in Vue 2.x
 - Prefer Composition API
