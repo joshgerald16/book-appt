@@ -1,5 +1,7 @@
 # book-appt
 
+See specification here: [spec/README.md](./spec/README.md)
+
 ## Project setup
 ```
 yarn install

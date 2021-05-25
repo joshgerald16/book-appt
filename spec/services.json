@@ -1,0 +1,40 @@
+[
+  {
+    "id": 201,
+    "category": "Cuts",
+    "name": "Hair Cut",
+    "staff": [101,103],
+    "time": 30,
+    "preptime": 0,
+    "posttime": 0
+  },
+  {
+    "id": 202,
+    "category": "Cuts",
+    "name": "Hair Wash, Cut & Blowdry",
+    "staff": [101,103],
+    "time": 50,
+    "preptime": 0,
+    "posttime": 0
+  },
+  {
+    "id":203,
+    "category": "Colour",
+    "name": "Tint",
+    "staff": [102,103],
+    "time": 60,
+    "cost": 120,
+    "preptime": 5,
+    "posttime": 5
+  },
+  {
+    "id":204,
+    "category": "Colour",
+    "name": "Interim",
+    "staff": [102,103],
+    "time": 45,
+    "cost": 65,
+    "preptime": 5,
+    "posttime": 5
+  }
+]
