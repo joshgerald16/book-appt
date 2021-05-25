@@ -2,6 +2,9 @@
 
 See specification here: [spec/README.md](./spec/README.md)
 
+Quick video briefing of task:
+https://www.loom.com/share/f13a86cfbf544e5aa35c36c79bfa5ecd
+
 ## Project setup
 ```
 yarn install
