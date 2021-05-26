@@ -2,12 +2,14 @@
   {
     "id": 401,
     "name": "Jane Smith",
-    "email": "janesmith@example.com"
+    "email": "janesmith@example.com",
+    "password": "12345678"
   },
   {
     "id": 402,
     "name": "John Doe",
-    "email": "johndoe@example.com"
+    "email": "johndoe@example.com",
+    "password": "12345678"
   }
 
 ]

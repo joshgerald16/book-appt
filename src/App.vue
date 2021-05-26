@@ -1,29 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+    <v-app>
+        <v-app-bar app color="primary" dark>
+            <div class="d-flex align-center">
+                <strong>Booking Appointment</strong>
+            </div>
+
+            <v-spacer></v-spacer>
+        </v-app-bar>
+
+        <v-main>
+            <Appointment v-if="param === 'appointment'" />
+            <Home v-else />
+        </v-main>
+    </v-app>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+    import Vue from "vue";
+    import Home from "./components/Home.vue";
+    import Appointment from "./components/Appointment.vue";
 
-export default Vue.extend({
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-});
+    export default Vue.extend({
+        name: "App",
+
+        components: {
+            Home,
+            Appointment
+        },
+        data() {
+            return {
+                param: window.location.href.split('/')[window.location.href.split('/').length-1]
+            }
+        },
+    });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
