@@ -30,7 +30,7 @@
             Back
         </v-btn>
 
-        <v-btn color="primary" @click="validate()" class="float-right">
+        <v-btn color="primary" @click="validate()" class="float-right mr-2">
             Next
         </v-btn>
     </div>
@@ -39,6 +39,7 @@
 <script>
     import serviceCategory from "/spec/services.json";
     import staff from "/spec/staff.json";
+    import customer from "/spec/customer.json";
 
     export default {
         name: "Default",
@@ -59,6 +60,8 @@
                 v => !!v || 'Contact number is required',
                 v => /^\d+$/.test(v) || 'Contact number must be valid',
             ],
+            userid: '',
+            customer: customer
         }),
         methods: {
             validate () {
@@ -68,6 +71,14 @@
             },
             back(){
                 this.$emit('prev');
+            }
+        },
+        mounted(){
+            this.userid = localStorage.getItem("user_id");
+
+            if(this.userid !== "" && this.userid !== null && this.userid !== undefined){
+                this.name = this.customer.filter(x=>x.id == this.userid)[0].name;
+                this.email = this.customer.filter(x=>x.id == this.userid)[0].email;
             }
         }
     }

@@ -56,7 +56,7 @@
                             <v-date-picker md="8" v-model="dateSchedule" show-adjacent-months :allowed-dates="allowedDates" :min="new Date().toISOString().slice(0, 10)" @click:date="changedateSched()"></v-date-picker>
                         </v-card>
                     </v-col>
-                    <v-col cols="6" md="4">
+                    <v-col cols="6" md="4" class="time_select">
                         <v-card class="pa-2 overflow-y-auto" max-height="400">
                             <v-btn v-for="(x, key) in listTime(staff[selectedStaff].schedule.filter(x=>x.date == dateSchedule))" :key='key' block class="mb-3" v-bind:class="timeSchedule === x ? 'blue-grey white--text' : ''" @click="timeSchedule = x">{{ x }}</v-btn>
                         </v-card>
@@ -69,7 +69,7 @@
             Back to home
         </v-btn>
 
-        <v-btn color="primary" @click="gotoInfo()" class="float-right">
+        <v-btn color="primary" @click="gotoInfo()" class="float-right mr-2">
             Next
         </v-btn>
     </div>

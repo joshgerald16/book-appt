@@ -23,17 +23,17 @@
 
 
             <div class="mt-5 text-left mb-5">
-                <v-btn elevation="2" class="ml-5" small href="https://www.icloud.com/calendar"> 
+                <v-btn elevation="2" class="ml-5" small href="https://www.icloud.com/calendar" target="_blank"> 
                     <v-icon style="font-size:18px">mdi-star</v-icon>
                     Add to iCal
                 </v-btn>
-                <v-btn elevation="2" class="ml-5" small href='https://www.google.com'> 
+                <v-btn elevation="2" class="ml-5" small href='https://www.google.com' target="_blank"> 
                     <v-icon style="font-size:18px">mdi-star</v-icon>
                   Add to google
               </v-btn>
             </div>
 
-            <div class="mt-5 text-left mb-5">
+            <div class="mt-5 text-left mb-5" v-if="userid ==='' || userid === undefined || userid === null">
                 <v-btn small color="blue lighten-3" elevation="2" class="ml-5">
                     <v-icon left>
                         mdi-pencil
@@ -43,7 +43,7 @@
             </div>
         </v-card>
 
-        <v-btn color="primary" class="float-right">
+        <v-btn color="primary" class="float-right mr-2" href="/appointment">
             Schedule another
         </v-btn>
     </div>
@@ -56,6 +56,7 @@
     export default {
         name: "Default",
         data: () => ({
+            userid: '',
         }),
         methods: {
             wordFormat(dat){
@@ -77,7 +78,10 @@
             },
             timeSched:{
                 type:String,
-            },
+            }
+        },
+        mounted(){
+            this.userid = localStorage.getItem("user_id");
         }
     }
 </script>
